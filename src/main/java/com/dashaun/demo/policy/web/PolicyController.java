@@ -7,13 +7,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class PolicyController {
 
-    @GetMapping("/api/policies")
+    @GetMapping({"/api/policies", "/api/policies/"})
     public String policies() {
         return "[{\"number\":\"PL-40012\",\"customerId\":\"C-1001\","
                 + "\"status\":\"ACTIVE\"}]";
     }
 
-    @GetMapping("/api/policies/{number}")
+    @GetMapping({"/api/policies/{number}", "/api/policies/{number}/"})
     public String policy(@PathVariable String number) {
         return "{\"number\":\"" + number + "\",\"customerId\":\"C-1001\","
                 + "\"product\":\"AUTO-PLUS\",\"status\":\"ACTIVE\","
